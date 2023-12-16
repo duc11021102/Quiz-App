@@ -3,14 +3,15 @@ import DUMMY_QUESTION from "../questions";
 import trophy from "../assets/quiz-complete.png";
 import QuestionTimer from "./QuestionTimer";
 import { useCallback } from "react";
+import Question from "./Question";
 const Quiz = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
 
   //  lưu các đáp án vào array
-  const handlerSelectAnswer = useCallback((answer) => {
+  const handlerSelectAnswer = useCallback((selectedAnswer) => {
     setUserAnswers((prevAnswers) => {
-      return [...prevAnswers, answer];
+      return [...prevAnswers, selectedAnswer];
     });
   }, []);
 
@@ -31,30 +32,15 @@ const Quiz = () => {
     );
   }
 
-  // xáo trộn các đáp án
-  const shuffledAnswers = [...DUMMY_QUESTION[activeQuestionIndex].answers];
-  shuffledAnswers.sort(() => Math.random() - 0.5);
-
   // key thay doi se chay lai toan bo component
   return (
     <div id="quiz">
-      <div id="question">
-        <QuestionTimer
-          key={activeQuestionIndex}
-          timeout={10000}
-          onTimeout={handleSkipAnswer}
-        />
-        <h2>{DUMMY_QUESTION[activeQuestionIndex].text}</h2>
-        <ul id="answers">
-          {shuffledAnswers.map((answer) => (
-            <li key={answer} className="answer">
-              <button onClick={() => handlerSelectAnswer(answer)}>
-                {answer}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Question
+        key={activeQuestionIndex}
+        activeQuestionIndex={activeQuestionIndex}
+        onSelectAnswer={handlerSelectAnswer}
+        handleSkipAnswer={handleSkipAnswer}
+      ></Question>
     </div>
   );
 };
