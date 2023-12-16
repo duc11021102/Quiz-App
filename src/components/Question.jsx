@@ -11,12 +11,13 @@ const Question = (props) => {
     isCorrect: null,
   });
 
+  // đặt trạng thái mặc định là 10s
   let timer = 10000;
-
+  // sau khi chọn câu sẽ đợi 1s để biết câu đấy đúng hay sai
   if (answer.selectedAnswer) {
     timer = 1000;
   }
-
+  // sau khi biết đúng hay sai thì sẽ đợi 2s để chuyển sang câu khác
   if (answer.isCorrect !== null) {
     timer = 2000;
   }
@@ -28,6 +29,7 @@ const Question = (props) => {
       isCorrect: null,
     });
     // sau 1 giây sẽ biết câu đấy đúng hay sai
+    // kiểm tra xem câu đấy có đúng với đáp án k
     setTimeout(() => {
       setAnswer({
         selectedAnswer: userAnswer,
