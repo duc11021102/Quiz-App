@@ -64,6 +64,7 @@ const Question = (props) => {
         {DUMMY_QUESTION[activeQuestionIndex].answers.map((a) => {
           return (
             <Answer
+              key={a}
               answerState={answerState}
               answer={a}
               selectedAnswer={answer.selectedAnswer}
