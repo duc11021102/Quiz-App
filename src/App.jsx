@@ -1,20 +1,16 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import Quiz from "./components/Quiz";
 import StartQuiz from "./components/StartQuiz";
 import Navbar from "./components/Navbar";
-
+import { useContext } from "react";
+import QuizContext from "./store/quiz-context";
 function App() {
-  const [started, setStarted] = useState(false);
-  const handlerStartQuiz = (type) => {
-    setStarted(type);
-  };
-
+  const quizCtx = useContext(QuizContext);
   let component;
-  if (started === true) {
-    component = <Quiz />;
+  if (quizCtx.isStart === false) {
+    component = <StartQuiz />;
   } else {
-    component = <StartQuiz startQuiz={handlerStartQuiz} />;
+    component = <Quiz />;
   }
   return (
     <>

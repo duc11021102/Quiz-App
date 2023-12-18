@@ -1,11 +1,14 @@
 import classes from "./Question.module.css";
 import Answer from "./Answer";
 import DUMMY_QUESTION from "../questions";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import QuestionTimer from "./QuestionTimer";
+import QuizContext from "../store/quiz-context";
 const Question = (props) => {
-  const activeQuestionIndex = props.activeQuestionIndex;
+  const quizCtx = useContext(QuizContext);
+  const activeQuestionIndex = quizCtx.userAnswer.length;
   const handleSkipAnswer = props.handleSkipAnswer;
+
   const [answer, setAnswer] = useState({
     selectedAnswer: "",
     isCorrect: null,
@@ -38,7 +41,7 @@ const Question = (props) => {
       });
       // sau hai giây sẽ chuyển sang câu khác
       setTimeout(() => {
-        props.onSelectAnswer(userAnswer);
+        quizCtx.addAnswer(userAnswer);
       }, 2000);
     }, 1000);
   }

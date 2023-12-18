@@ -25,7 +25,6 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
 
   return (
     <progress
-      // id={classes.question}
       max={timeout}
       className={`${classes[mode]}`}
       value={remainingTime}

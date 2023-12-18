@@ -22,7 +22,7 @@ const Navbar = () => {
           }}
         />
       )}
-      <audio src={intro} autoPlay muted={!isSoundOn}></audio>
+      <audio src={intro} loop autoPlay muted={!isSoundOn}></audio>
     </header>
   );
 };

@@ -1,9 +1,12 @@
 import trophy from "../assets/quiz-complete.png";
 import style from "./StartQuiz.module.css";
 import click from "../function/Click";
-const StartQuiz = (props) => {
+import { useContext } from "react";
+import QuizContext from "../store/quiz-context";
+const StartQuiz = () => {
+  const quizCtx = useContext(QuizContext);
   const handlerStart = () => {
-    props.startQuiz(true);
+    quizCtx.startQuiz();
     click();
   };
 
