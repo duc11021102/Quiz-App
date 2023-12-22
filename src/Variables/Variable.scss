@@ -1,0 +1,31 @@
+//import
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+// color
+$soundBtnColor: #c18cfa;
+$questionColor: #c1b2dd;
+$processColor: #9e5ef8;
+$processAnsswered: #f8e59c;
+$bgQuizContainer: linear-gradient(180deg, #3e2a60 0%, #321061 100%);
+$bgStartQuiz: linear-gradient(180deg, #a17eda 0%, #895fc4 100%);
+// fonts
+$font-body: "Roboto Condensed", sans-serif;
+
+//components
+@mixin btnStart {
+  font-family: $font-body;
+  background-color: #c18cfa;
+  color: #3a2353;
+  border: 3px solid #3a2353;
+  font-size: 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px 5px 10px;
+  letter-spacing: 0.3rem;
+}
+
+@mixin btnStartHover {
+  background-color: #b16afd;
+  transition-duration: 200ms;
+}

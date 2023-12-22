@@ -3,13 +3,10 @@ import { useCallback, useContext } from "react";
 import Question from "./Question";
 import Summary from "./Summary";
 import QuizContext from "../store/quiz-context";
-import classes from "./Quiz.module.css";
-
+import "../styles/Quiz/Quiz.css";
 const Quiz = () => {
   const quizCtx = useContext(QuizContext);
   let userAnswers = quizCtx.userAnswer;
-
-  // const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
 
   //  lưu các đáp án vào array
@@ -31,7 +28,7 @@ const Quiz = () => {
 
   // key thay doi se chay lai toan bo component
   return (
-    <div id={classes.quiz}>
+    <div id="quiz">
       <Question
         key={activeQuestionIndex}
         onSelectAnswer={handlerSelectAnswer}

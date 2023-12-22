@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import classes from "./QuestionTimer.module.css";
-
+import "../styles/QuestionTimer/QuestionTimer.css";
 export default function QuestionTimer({ timeout, onTimeout, mode }) {
   const [remainingTime, setRemainingTime] = useState(timeout);
 
@@ -25,8 +24,9 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
 
   return (
     <progress
+      className="progress"
       max={timeout}
-      className={`${classes[mode]}`}
+      // className={`${classes[mode]}`}
       value={remainingTime}
     />
   );

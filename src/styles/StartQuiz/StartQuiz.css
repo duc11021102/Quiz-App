@@ -1,24 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap");
 .start {
   max-width: 40rem;
   margin: 2rem auto;
   padding: 2rem;
   background: linear-gradient(180deg, #a17eda 0%, #895fc4 100%);
-  color: #191321;
   border-radius: 8px;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.6);
-  animation: slide-in-from-bottom 0.7s ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .start img {
   display: block;
   width: 8rem;
   height: 8rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin: 0 auto 1rem auto;
   padding: 1rem;
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
@@ -42,4 +41,4 @@
 .start button:hover {
   background-color: #b16afd;
   transition-duration: 200ms;
-}
+}/*# sourceMappingURL=StartQuiz.css.map */

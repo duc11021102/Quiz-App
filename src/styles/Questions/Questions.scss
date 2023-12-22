@@ -1,0 +1,19 @@
+@import "../../Variables/Variable.scss";
+
+#question h2 {
+  font-family: $font-body;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0.5rem 0 2.5rem 0;
+  color: $questionColor;
+}
+
+#answers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}

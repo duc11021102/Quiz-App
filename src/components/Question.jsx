@@ -1,4 +1,5 @@
-import classes from "./Question.module.css";
+// import classes from "./Question.module.css";
+import "../styles/Questions/Questions.css";
 import Answer from "./Answer";
 import DUMMY_QUESTION from "../questions";
 import { useState, useContext } from "react";
@@ -55,7 +56,7 @@ const Question = (props) => {
   }
 
   return (
-    <div id={classes.question}>
+    <div id="question">
       <QuestionTimer
         timeout={timer}
         key={timer}
@@ -63,7 +64,7 @@ const Question = (props) => {
         mode={answerState}
       />
       <h2>{DUMMY_QUESTION[activeQuestionIndex].text}</h2>
-      <ul id={classes.answers}>
+      <ul id="answers">
         {DUMMY_QUESTION[activeQuestionIndex].answers.map((a) => {
           return (
             <Answer

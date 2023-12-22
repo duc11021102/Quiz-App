@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaVolumeUp } from "react-icons/fa";
 import { FaVolumeMute } from "react-icons/fa";
-import classes from "./Navbar.module.css";
+import "../styles/Navbar/Navbar.css";
 import intro from "../assets/intro.mp3";
 const Navbar = () => {
   const [isSoundOn, setIsSoundOn] = useState(true);
@@ -9,14 +9,14 @@ const Navbar = () => {
     <header>
       {isSoundOn ? (
         <FaVolumeUp
-          className={classes.sound}
+          className="sound"
           onClick={() => {
             setIsSoundOn(!isSoundOn);
           }}
         />
       ) : (
         <FaVolumeMute
-          className={classes.sound}
+          className="sound"
           onClick={() => {
             setIsSoundOn(!isSoundOn);
           }}

@@ -1,0 +1,31 @@
+@import "../../Variables/Variable.scss";
+
+progress {
+  width: 50%;
+  height: 0.5rem;
+  border-radius: 24px;
+  background: $processColor;
+  margin: 0;
+}
+
+// progress::-webkit-progress-bar {
+//   background: $processColor;
+//   border-radius: 24px;
+// }
+
+// progress::-webkit-progress-value {
+//   background: $processColor;
+//   border-radius: 24px;
+// }
+
+// progress.answered {
+//   background: $processAnsswered;
+// }
+
+// progress.answered::-webkit-progress-value {
+//   background: $processAnsswered;
+// }
+
+// progress.answered::-webkit-progress-bar {
+//   background: $processColor;
+// }
