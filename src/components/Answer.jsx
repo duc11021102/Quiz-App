@@ -1,33 +1,31 @@
-import classes from "./Answer.module.css";
-// import click from "../assets/click.mp3";
 import click from "../function/Click";
+import "../styles/Answers/Answers.css";
 const Answer = (props) => {
   const answer = props.answer;
   const answerState = props.answerState;
   const selectedAnswer = props.selectedAnswer;
 
   const isSelected = selectedAnswer === answer;
-  let cssClass = `${classes.btn}`;
-
+  let cssClass = "btn";
   if (answerState === "answered" && isSelected) {
-    console.log(isSelected);
-    console.log(answerState);
-    cssClass = `${classes.selected}`;
+    cssClass = "selected";
   }
   if ((answerState === "correct" || answerState === "wrong") && isSelected) {
-    cssClass = `${classes[answerState]}`;
+    if (answerState === "correct") {
+      cssClass = "correctAns";
+    } else {
+      cssClass = "wrongAns";
+    }
   }
 
-  // const audio = new Audio(click);
   return (
-    <li key={answer} className={classes.answer}>
+    <li key={answer} className="answer">
       <button
         disabled={answerState !== ""}
         className={cssClass}
         onClick={() => {
           props.onhandlerSelectAnswer(answer);
           click();
-          // audio.play();
         }}
       >
         {answer}

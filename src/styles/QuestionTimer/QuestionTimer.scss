@@ -1,31 +1,41 @@
 @import "../../Variables/Variable.scss";
 
-progress {
+.my-progress {
   width: 50%;
   height: 0.5rem;
   border-radius: 24px;
   background: $processColor;
   margin: 0;
 }
+.my-progress::-webkit-progress-bar {
+  border-radius: 24px;
+}
 
-// progress::-webkit-progress-bar {
-//   background: $processColor;
-//   border-radius: 24px;
-// }
+.my-progress::-webkit-progress-value {
+  background: $processColor;
+  border-radius: 24px;
+}
 
-// progress::-webkit-progress-value {
-//   background: $processColor;
-//   border-radius: 24px;
-// }
+.my-progress.answered {
+  background: #f8e59c;
+}
+.my-progress.answered::-webkit-progress-value {
+  background: #f8e59c;
+  border-radius: 24px;
+}
 
-// progress.answered {
-//   background: $processAnsswered;
-// }
+.my-progress.correct {
+  background: #5af59d;
+}
+.my-progress.correct::-webkit-progress-value {
+  background: #5af59d;
+  border-radius: 24px;
+}
 
-// progress.answered::-webkit-progress-value {
-//   background: $processAnsswered;
-// }
-
-// progress.answered::-webkit-progress-bar {
-//   background: $processColor;
-// }
+.my-progress.wrong {
+  background: #f55a98;
+}
+.my-progress.wrong::-webkit-progress-value {
+  background: #f55a98;
+  border-radius: 24px;
+}

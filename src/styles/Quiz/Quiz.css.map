@@ -1,1 +1,1 @@
-{"version":3,"sources":["Quiz.scss","../../Variables/Variable.scss","Quiz.css"],"names":[],"mappings":"AAEA;EACE,gBAAA;EACA,YAAA;EACA,aAAA;EACA,6DCLgB;EDMhB,kBAAA;EACA,gDAAA;EACA,kBAAA;AEDF","file":"Quiz.css"}
+{"version":3,"sources":["../../Variables/Variable.scss","Quiz.scss","Quiz.css"],"names":[],"mappings":"AACQ,6HAAA;ACCR;EACE,gBAAA;EACA,YAAA;EACA,aAAA;EACA,6DDKgB;ECJhB,kBAAA;EACA,gDAAA;EACA,kBAAA;ACAF","file":"Quiz.css"}

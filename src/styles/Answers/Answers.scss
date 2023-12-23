@@ -1,0 +1,34 @@
+@import "../../Variables/Variable.scss";
+
+.answer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  @include btnAnswer();
+  &:hover {
+    @include btnAnswerHover();
+  }
+  &:focus {
+    @include btnAnswerHover();
+  }
+}
+
+.selected {
+  @include btnAnswer();
+  background: #f5a76c;
+  color: #2c203d;
+}
+
+.correctAns {
+  @include btnAnswer();
+  background: #5af59d;
+  color: #2c203d;
+}
+
+.wrongAns {
+  @include btnAnswer();
+  background: #f55a98;
+  color: #2c203d;
+}

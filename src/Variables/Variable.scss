@@ -5,7 +5,10 @@
 $soundBtnColor: #c18cfa;
 $questionColor: #c1b2dd;
 $processColor: #9e5ef8;
-$processAnsswered: #f8e59c;
+$processAnswered: #f8e59c;
+$processCorrect: #5af59d;
+$processWrong: #f55a98;
+$answerColor: #6cb7f5;
 $bgQuizContainer: linear-gradient(180deg, #3e2a60 0%, #321061 100%);
 $bgStartQuiz: linear-gradient(180deg, #a17eda 0%, #895fc4 100%);
 // fonts
@@ -28,4 +31,22 @@ $font-body: "Roboto Condensed", sans-serif;
 @mixin btnStartHover {
   background-color: #b16afd;
   transition-duration: 200ms;
+}
+
+@mixin btnAnswer {
+  display: inline-block;
+  width: 100%;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: $answerColor;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin btnAnswerHover {
+  background: #9d5af5;
+  color: white;
 }

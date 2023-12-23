@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap");
 .answer {
   width: 90%;
   margin: 0 auto;
@@ -10,13 +11,15 @@
   font-size: 0.9rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
   background: #6cb7f5;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
-.btn:hover,
+.btn:hover {
+  background: #9d5af5;
+  color: white;
+}
 .btn:focus {
   background: #9d5af5;
   color: white;
@@ -29,37 +32,40 @@
   font-size: 0.9rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
+  background: #6cb7f5;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   background: #f5a76c;
   color: #2c203d;
 }
 
-.correct {
+.correctAns {
   display: inline-block;
   width: 100%;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.9rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
+  background: #6cb7f5;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   background: #5af59d;
   color: #2c203d;
 }
 
-.wrong {
+.wrongAns {
   display: inline-block;
   width: 100%;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.9rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
+  background: #6cb7f5;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   background: #f55a98;
   color: #2c203d;
-}
+}/*# sourceMappingURL=Answers.css.map */

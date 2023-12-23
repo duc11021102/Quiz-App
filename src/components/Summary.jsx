@@ -2,8 +2,8 @@ import trophy from "../assets/quiz-complete.png";
 import DUMMY_QUESTION from "../questions";
 import { useContext } from "react";
 import QuizContext from "../store/quiz-context";
-import classes from "./Summary.module.css";
 import click from "../function/Click";
+import "../styles/Summary/Summary.css";
 const Summary = ({ userAnswers }) => {
   const quizCtx = useContext(QuizContext);
   const skippedAnswers = userAnswers.filter((answer) => answer === null);
@@ -25,55 +25,43 @@ const Summary = ({ userAnswers }) => {
     quizCtx.resetQuiz();
     click();
   };
+
+  const array = [
+    { parameter: skippedAnswersShare, type: "Skipped" },
+    { parameter: correctAnswersShare, type: "answered correctly" },
+    { parameter: inCorrectAnswersShare, type: "answered incorrectly" },
+  ];
   return (
-    <div id={classes.summary}>
+    <div id="summary">
       <img src={trophy}></img>
       <h2>Quiz Complete</h2>
-      <div id={`${classes["summary-stats"]}`}>
-        <p>
-          <span className={`${classes["summary-stats"]} ${classes.number}`}>
-            {skippedAnswersShare}%
-          </span>
-          <span className={`${classes["summary-stats"]} ${classes.text}`}>
-            Skipped
-          </span>
-        </p>
-        <p>
-          <span className={`${classes["summary-stats"]} ${classes.number}`}>
-            {correctAnswersShare}%
-          </span>
-          <span className={`${classes["summary-stats"]} ${classes.text}`}>
-            answered correctly
-          </span>
-        </p>
-        <p>
-          <span className={`${classes["summary-stats"]} ${classes.number}`}>
-            {inCorrectAnswersShare}%
-          </span>
-          <span className={`${classes["summary-stats"]} ${classes.text}`}>
-            answered incorrectly
-          </span>
-        </p>
+      <div id="summary-stats">
+        {array.map((type) => (
+          <p key={type}>
+            <span className="summary-stats number">{type.parameter}%</span>
+            <span className="summary-stats text">{type.type}</span>
+          </p>
+        ))}
       </div>
       <button onClick={resetQuiz}>RESTART QUIZ</button>
       <ol>
         {userAnswers.map((answer, index) => {
-          let cssClass = `${classes["user-answer"]}`;
+          let cssClass = "user-answer";
           if (answer === null) {
-            cssClass += ` ${classes.skipped}`;
+            cssClass += " skipped";
           } else if (answer === DUMMY_QUESTION[index].correctAnswer) {
-            cssClass += ` ${classes.correct}`;
+            cssClass += " correct";
           } else {
-            cssClass += ` ${classes.wrong}`;
+            cssClass += " wrong";
           }
           return (
             <li key={index}>
               <h3>{index + 1}</h3>
-              <p className={classes.question}>{DUMMY_QUESTION[index].text}</p>
-              <p className={`${classes["your-answer"]}`}>Your answer</p>
+              <p className="question">{DUMMY_QUESTION[index].text}</p>
+              <p className="text">Your answer</p>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
-              <p className={`${classes["your-answer"]}`}>Correct answer</p>
-              <p className={`${classes["answer-correct"]}`}>
+              <p className="text">Correct answer</p>
+              <p className="answer-correct">
                 {DUMMY_QUESTION[index].correctAnswer}
               </p>
             </li>
